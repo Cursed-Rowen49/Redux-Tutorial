@@ -53,4 +53,4 @@ setTimeout(() => {
   console.log(store.getState());
   store.dispatch(incrementByPayload(5));
   console.log(store.getState());
-}, 1000);
+}, 1000); 
