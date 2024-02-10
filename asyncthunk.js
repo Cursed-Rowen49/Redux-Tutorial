@@ -24,7 +24,7 @@ const reducerFuction = (state = { amount: 0 }, action) => {
 
 const store = createStore(reducerFuction, applyMiddleware(thunk));
 
-// Async Api Call.
+// Async Api Call using the thunk.
 const getUser = async (dispatch, getState) => {
   const { data } = await axios.get("http://localhost:3000/accounts/1");
   dispatch(initUser(data));
