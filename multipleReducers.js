@@ -1,7 +1,9 @@
 import { combineReducers, createStore } from "redux";
 
-const INC = "inc";
-const DEC = "dec";
+const INC = "account/inc";
+const DEC = "account/dec";
+const INCBONUS = "bonus/inc";
+const DECBONUS = "bonus/dec";
 
 // Action Creator for the Account Reducer.
 const incrementAccount = () => {
@@ -13,10 +15,10 @@ const decrementAccount = () => {
 
 // Action Creator for the Bonus Reducer.
 const incrementBonus = () => {
-  return { type: INC };
+  return { type: INCBONUS };
 };
 const decrementBonus = () => {
-  return { type: DEC };
+  return { type: DECBONUS };
 };
 
 // Account Reducer
@@ -34,9 +36,9 @@ const accountReducer = (state = { amount: 0 }, action) => {
 // Bonus Reducer
 const bonusReducer = (state = { points: 10 }, action) => {
   switch (action.type) {
-    case INC:
+    case INCBONUS:
       return { points: state.points + 1 };
-    case DEC:
+    case DECBONUS:
       return { points: state.points - 1 };
     default:
       return state;
